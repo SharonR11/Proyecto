@@ -1,13 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Primercomponente from './componentes/primercomp';
+import Primercomponente from './componentes/primero';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Componente</h1>
+        <Primercomponente/>
         
       </header>
     </div>
