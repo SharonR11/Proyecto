@@ -1,10 +1,13 @@
 package proyectos.spring.modelo;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,6 +35,17 @@ public class Oferta {
 	
 	@Column(name="fecha",length = 30)
 	private String fecha;
+	
+	@OneToMany(mappedBy = "oferta")
+    private List<Postular> postulaciones;
+	
+	public List<Postular> getPostulaciones() {
+		return postulaciones;
+	}
+
+	public void setPostulaciones(List<Postular> postulaciones) {
+		this.postulaciones = postulaciones;
+	}
 
 	public Oferta(Long oferta, String empresa, String titulo, String descripcion, String sueldo, String cargo,
 			String fecha) {
@@ -44,8 +58,27 @@ public class Oferta {
 		this.cargo = cargo;
 		this.fecha = fecha;
 	}
+	
+
+	public Oferta(Long oferta, String empresa, String titulo, String descripcion, String sueldo, String cargo,
+			String fecha, List<Postular> postulaciones) {
+		super();
+		this.oferta = oferta;
+		this.empresa = empresa;
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+		this.sueldo = sueldo;
+		this.cargo = cargo;
+		this.fecha = fecha;
+		this.postulaciones = postulaciones;
+	}
 
 	public Oferta() {
+	}
+
+	public Oferta(Long oferta) {
+		
+		this.oferta = oferta;
 	}
 
 	public Long getOferta() {
@@ -107,7 +140,15 @@ public class Oferta {
 	@Override
 	public String toString() {
 		return "Oferta [oferta=" + oferta + ", empresa=" + empresa + ", titulo=" + titulo + ", descripcion="
-				+ descripcion + ", sueldo=" + sueldo + ", cargo=" + cargo + ", fecha=" + fecha + "]";
+				+ descripcion + ", sueldo=" + sueldo + ", cargo=" + cargo + ", fecha=" + fecha + ", postulaciones="
+				+ postulaciones + "]";
 	}
+	
+/*
+	@Override
+	public String toString() {
+		return "Oferta [oferta=" + oferta + ", empresa=" + empresa + ", titulo=" + titulo + ", descripcion="
+				+ descripcion + ", sueldo=" + sueldo + ", cargo=" + cargo + ", fecha=" + fecha + "]";
+	}*/
 	
 }

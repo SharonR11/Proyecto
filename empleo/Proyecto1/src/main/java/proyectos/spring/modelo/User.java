@@ -1,10 +1,13 @@
 package proyectos.spring.modelo;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,7 +42,9 @@ public class User {
 	@Column(name="password", length = 255)
 	private String password;
 
-
+	@OneToMany(mappedBy = "user")
+    private List<Postular> postulaciones;
+	
 	public User(int user, String nombres, String apellidos, String dni, String carrera, String ciclo, String telefono,
 			String email, String password) {
 		super();
@@ -54,10 +59,36 @@ public class User {
 		this.password = password;
 	}
 
+	public User(int user, String nombres, String apellidos, String dni, String carrera, String ciclo, String telefono,
+			String email, String password, List<Postular> postulaciones) {
+		super();
+		this.user = user;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.dni = dni;
+		this.carrera = carrera;
+		this.ciclo = ciclo;
+		this.telefono = telefono;
+		this.email = email;
+		this.password = password;
+		this.postulaciones = postulaciones;
+	}
+	
+	public List<Postular> getPostulaciones() {
+		return postulaciones;
+	}
+
+	public void setPostulaciones(List<Postular> postulaciones) {
+		this.postulaciones = postulaciones;
+	}
+
 	public User() {
 		
 	}
-	
+	public User(int user) {
+		this.user = user;
+	}
+
 	public int getUser() {
 		return user;
 	}
@@ -134,7 +165,9 @@ public class User {
 	public String toString() {
 		return "User [user=" + user + ", nombres=" + nombres + ", apellidos=" + apellidos + ", dni=" + dni
 				+ ", carrera=" + carrera + ", ciclo=" + ciclo + ", telefono=" + telefono + ", email=" + email
-				+ ", password=" + password + "]";
+				+ ", password=" + password + ", postulaciones=" + postulaciones + "]";
 	}
+
+	
 
 }
