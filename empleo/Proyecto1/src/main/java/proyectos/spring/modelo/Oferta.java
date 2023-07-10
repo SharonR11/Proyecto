@@ -59,7 +59,6 @@ public class Oferta {
 		this.fecha = fecha;
 	}
 	
-
 	public Oferta(Long oferta, String empresa, String titulo, String descripcion, String sueldo, String cargo,
 			String fecha, List<Postular> postulaciones) {
 		super();
