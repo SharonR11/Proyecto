@@ -1,0 +1,76 @@
+/* Estilos para la barra de navegación */
+.nav {
+    background: #0b222b; /* Color de fondo de la barra de navegación */
+    height: 70px; /* Altura de la barra de navegación */
+    display: flex; /* Mostrar los elementos en línea */
+    justify-content: space-between; /* Distribuir los elementos horizontalmente */
+    align-items: center; /* Alinear los elementos verticalmente en el centro */
+    padding: 0 1rem; /* Espaciado interno izquierdo y derecho */
+  }
+  
+  /* Estilos para los enlaces de navegación */
+  .nav-link {
+    color: #160b08; /* Color del texto de los enlaces */
+    display: flex; /* Mostrar los elementos en línea */
+    align-items: center; /* Alinear los elementos verticalmente en el centro */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    padding: 0 1rem; /* Espaciado interno izquierdo y derecho */
+    height: 100%; /* Altura del enlace igual a la altura de la barra de navegación */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre los enlaces */
+  }
+  
+  /* Estilos para el icono de las barras (modo responsivo) */
+  .bars {
+    display: none; /* Ocultar el icono por defecto */
+    color: #f0d0c7; /* Color del icono */
+    font-size: 1.5rem; /* Tamaño del icono */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el icono */
+  
+    /* Estilos para el modo responsivo */
+    @media screen and (max-width: 768px) {
+      display: block; /* Mostrar el icono en dispositivos con ancho máximo de 768px */
+    }
+  }
+  
+  /* Estilos para el menú de navegación */
+  .nav-menu {
+    display: flex; /* Mostrar los elementos en línea */
+    align-items: center; /* Alinear los elementos verticalmente en el centro */
+    margin-right: 1rem; /* Margen derecho del menú de navegación */
+  
+    /* Ocultar el menú en modo responsivo */
+    @media screen and (max-width: 768px) {
+      display: none; /* Ocultar el menú en dispositivos con ancho máximo de 768px */
+    }
+  }
+  
+  /* Estilos para el botón de navegación */
+  .nav-btn {
+    display: flex; /* Mostrar los elementos en línea */
+    align-items: center; /* Alinear los elementos verticalmente en el centro */
+  }
+  
+  /* Estilos para los enlaces del botón de navegación */
+  .nav-btn-link {
+    border-radius: 4px; /* Radio de borde para el botón */
+    background: #f0d0c7; /* Color de fondo del botón */
+    padding: 0.5rem 1rem; /* Espaciado interno del botón */
+    color: #9a0745; /* Color del texto del botón */
+    border: none; /* Quitar borde del botón */
+    outline: none; /* Quitar contorno al hacer clic en el botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: all 0.2s ease-in-out; /* Transición suave al hacer hover en el botón */
+    text-decoration: none; /* Quitar subrayado del botón */
+  
+    /* Estilos al pasar el cursor sobre el botón */
+    &:hover {
+      background: #e4836d; /* Cambiar color de fondo del botón al hacer hover */
+      color: #9a0745; /* Cambiar color del texto del botón al hacer hover */
+    }
+  
+    /* Ajustar margen derecho para los botones, excepto el último */
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+  

@@ -1,0 +1,54 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+/* Index.css */
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+.container {
+    background-image: url('../images/imagen4.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .inputContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputField {
+    margin-right: 10px;
+  }
+  
+button{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #1273cd7b;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .search-container input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #dabebe;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .formu .button {
+    background-color: #111233;
+  }
+  
+  
